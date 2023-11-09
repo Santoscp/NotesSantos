@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="submit()" >
+<div class="form-floating mb-3">
+    <input #title type="text" class="form-control" formControlName="title" >
+    <label >Titutlo</label>
+  </div>
+  <div class="form-floating">
+    <input type="text" class="form-control" formControlName="description" >
+    <label>Descripcion</label>
+  </div>
+  <input type="hidden" formControlName="id">
+ 
+  <input type="submit" value="GUARDAR"  [disabled]="this.form.status!='VALID'">
+</form>
+
+
+<div *ngIf="alert" class="alert" role="alert">
+  
+  <p>NOTA INSERTADA CON EXITO</p>
+  
+</div>
